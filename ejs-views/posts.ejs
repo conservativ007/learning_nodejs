@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <header><%- include('./partials/nav.ejs') %></header>
+    <main>
+      <ul>
+        <% if (posts.length > 0) { %> <% posts.forEach(i => { %>
+        <li>
+          <article>
+            <h2>
+              <a href="/posts/<%= i.id %>"><%= i.title %> </a>
+            </h2>
+            <time><%= i.date %></time>
+            <p><%= i.text %></p>
+            <p><%= i.author %></p>
+          </article>
+        </li>
+        <% }) %> <% } %>
+      </ul>
+    </main>
+  </body>
+</html>
